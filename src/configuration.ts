@@ -1,0 +1,1 @@
+export const SERVER_ADDR = "http://192.168.1.106:8888/"
