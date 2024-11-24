@@ -1,7 +1,7 @@
 import { ColorMode, DisplayDevice, GrayLR, Monochrome, Orientation } from '@epaperjs/core';
-import { ImageOptions } from '@epaperjs/core/src/image/imageOptions';
-import bindings from 'bindings';
 import { Driver } from './driver';
+import { ImageOptions } from '@epaperjs/core/lib/image/imageOptions';
+import bindings from 'bindings';
 
 export class Rpi2In7V2 implements DisplayDevice {
     public readonly height: number;
@@ -12,7 +12,7 @@ export class Rpi2In7V2 implements DisplayDevice {
         if (!supportedColorModes.includes(colorMode)) {
             throw new Error(`Only color modes: [${supportedColorModes}] are supported`);
         }
-        this.driver = bindings('waveshare2in7v2.node');
+        this.driver = bindings('./build/waveshare2in7v2.node');
         this.width = this.orientation === Orientation.Horizontal ? 264 : 176;
         this.height = this.orientation === Orientation.Horizontal ? 176 : 264;
     }
