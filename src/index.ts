@@ -1,7 +1,7 @@
 // import { Rpi2In7V2 } from "./device/2in7v2/rpi2In7V2"
 
 import { ColorMode, Orientation } from "@epaperjs/core"
-import { SERVER_ADDR } from "./configuration"
+import { MINUTE, SERVER_ADDR } from "./configuration"
 import { Rpi2In7V2 } from "./rpi-2in7-v2/lib/rpi2In7V2"
 import { takeScreenshot } from "./screen"
 import axios from "axios"
@@ -44,7 +44,8 @@ class DeviceCommand {
     }
 }
 
-const command = new DeviceCommand()
+const command = new DeviceCommand(Orientation.Horizontal, ColorMode.Gray4)
 
-
-command.refreshDisplay()
+setInterval(() => {
+    command.refreshDisplay()
+}, 5 * MINUTE)
