@@ -44,8 +44,8 @@ class DeviceCommand {
     }
 }
 
-const command = new DeviceCommand(Orientation.Horizontal, ColorMode.Gray4)
-
+const command = new DeviceCommand(Orientation.Horizontal, ColorMode.Black)
+command.refreshDisplay()
 setInterval(() => {
     command.refreshDisplay()
 }, 5 * MINUTE)
