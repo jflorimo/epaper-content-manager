@@ -24,6 +24,7 @@ class DeviceCommand {
     private dispose = () => {
         console.log("[DEVICE] disconnect")
         this.device.disconnect();
+        process.exit(1)
     }
 
     public refreshDisplay = async () => {
