@@ -61,7 +61,7 @@ Napi::Object SetupNapi(Napi::Env env, Napi::Object exports) {
     exports.Set(Napi::String::New(env, "init"),
                 Napi::Function::New(env, Init));
     exports.Set(Napi::String::New(env, "init_4Gray"),
-                Napi::Function::New(env, Init));
+                Napi::Function::New(env, Init_4Gray));
     exports.Set(Napi::String::New(env, "display"),
                 Napi::Function::New(env, Display));
     exports.Set(Napi::String::New(env, "display_4Gray"),
